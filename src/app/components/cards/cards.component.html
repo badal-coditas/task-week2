@@ -1,0 +1,20 @@
+<div class="card-wrapper">
+    <div *ngFor="let cards of allCards" class="card">
+        <img [src]="cards.imagePath">
+        <div class="card-details">
+            <span>Type</span>
+
+            <span>{{cards.cardClass}}</span>
+        </div>
+        <div class="card-details">
+            <span>Quantity</span>
+
+            <span>{{cards.quantity}}</span>
+        </div>
+        <div class="card-details">
+            <span>Price</span>
+
+            <span>{{cards.price}}</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+@import '../../../styles.scss';
+
+.header {
+    &-wrapper {
+        width                : 100%;
+        height               : 50px;
+        background           : $color-primary;
+        display              : grid;
+        grid-template-columns: auto auto;
+    }
+
+    &-menus {
+        display        : flex;
+        align-items    : center;
+        justify-content: flex-end;
+
+        div {
+            color       : white;
+            font-size   : 14px;
+            margin-right: 15px;
+            cursor      : pointer;
+        }
+
+        div:hover {
+            border-bottom: 2px solid white;
+        }
+    }
+
+    &-logo {
+        margin: auto 20px;
+
+        span {
+            font-size  : 22px;
+            font-weight: 600;
+            color      : white;
+
+        }
+    }
+}

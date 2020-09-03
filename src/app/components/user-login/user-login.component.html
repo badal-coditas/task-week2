@@ -1,0 +1,19 @@
+<div class="form-wrapper">
+    <div class="form-box">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-box-inputs">
+                <div class="form-heading">login</div>
+                <div>
+                    <input type="email" formControlName="email" placeholder="Enter Email" class="form-input">
+                    <input type="password" formControlName="password" placeholder="Enter Password" class="form-input">
+                    <div *ngIf="submited" class="invalid-input">Please enter valid email id and password.</div>
+                </div>
+                <div class="form-buttons">
+                    <button type="reset" class="form-reset">Reset</button>
+                    <button type="submit" class="form-login">Login</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

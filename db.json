@@ -1,0 +1,68 @@
+{
+    "registerUser": [
+        {
+            "id": 1,
+            "email": "badal.lohakar@gmail.com",
+            "password": "",
+            "name": ""
+        },
+        {
+            "id": 2,
+            "email": "badal@gmail.com",
+            "password": "badallove",
+            "name": "badal",
+            "number": 74514
+        },
+        {
+            "id": 3,
+            "email": "badal@gmail.com",
+            "password": "badallove",
+            "name": "badal",
+            "number": 74514
+        }
+    ],
+    "cardDetails": [
+        {
+            "imagePath": "../../../assets/first.png",
+            "cardClass": "silver",
+            "quantity": 500,
+            "price": 1500
+        },
+        {
+            "imagePath": "../../../assets/SEVEN.png",
+            "cardClass": "silver",
+            "quantity": 500,
+            "price": 1500
+        },
+        {
+            "imagePath": "../../../assets/third.png",
+            "cardClass": "silver",
+            "quantity": 500,
+            "price": 1500
+        },
+        {
+            "imagePath": "../../../assets/fifth.png",
+            "cardClass": "silver",
+            "quantity": 500,
+            "price": 1500
+        },
+        {
+            "imagePath": "../../../assets/SIX.png",
+            "cardClass": "silver",
+            "quantity": 500,
+            "price": 1500
+        },
+        {
+            "imagePath": "../../../assets/second.png",
+            "cardClass": "silver",
+            "quantity": 500,
+            "price": 1500
+        },
+        {
+            "imagePath": "../../../assets/ten.png",
+            "cardClass": "silver",
+            "quantity": 500,
+            "price": 1500
+        }
+    ]
+}

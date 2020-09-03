@@ -1,0 +1,33 @@
+<div class="form-wrapper">
+    <div class="form-box">
+        <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+            <div class="form-box-inputs">
+                <div class="form-heading">Register</div>
+                <div>
+                    <input type="text" placeholder="Enter Full Name" formControlName="fullName" class="form-input">
+                    <div *ngIf="submitted && f.fullName.errors" class="invalid-input">
+                        <div *ngIf="f.fullName.errors.required">Full Name is required</div>
+                    </div>
+                    <input type="number" formControlName="number" placeholder="Enter Mobile number" class="form-input"
+                        min=0>
+                    <div *ngIf="submitted && f.number.errors" class="invalid-input">
+                        <div *ngIf="f.number.errors.required">Number is required</div>
+                    </div>
+                    <input type="email" formControlName="email" placeholder="Enter Email" class="form-input">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-input">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+                    <input type="password" formControlName="password" placeholder="Enter Password" class="form-input">
+                    <div *ngIf="submitted && f.password.errors" class="invalid-input">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors?.minlength">Password must be 6 char long</div>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button type="reset" class="form-reset">Reset</button>
+                    <button type="submit" class="form-login">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
