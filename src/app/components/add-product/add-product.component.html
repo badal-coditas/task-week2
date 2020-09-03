@@ -1,5 +1,5 @@
 <div class="add-product">
-    <form [formGroup]="addProduct" (ngSubmit)="addProductCard()">
+    <form [formGroup]="addProduct" (ngSubmit)="addAndUpdateProductCard()">
         <div class="form-box-inputs">
             <div class="form-heading">Add Product</div>
             <div>
@@ -24,7 +24,10 @@
             </div>
             <div class="form-buttons">
                 <button type="reset" class="form-reset">Reset</button>
-                <button type="submit" class="form-login">Add</button>
+                <button type="submit" class="form-login">Save</button>
+            </div>
+            <div *ngIf="saveUserDataFlag" class="data-saved">
+                User data has been saved.
             </div>
         </div>
     </form>

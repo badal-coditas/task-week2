@@ -1,12 +1,62 @@
 @import '../../../styles.scss';
 
 .edit-wrapper {
-    display        : flex;
-    justify-content: space-between;
+
 
     .edit-lists {
-        height  : 500px;
-        width   : 400px;
-        overflow: scroll;
+        height    : 800px;
+        width     : 800px;
+        overflow  : scroll;
+        border-top: 2px solid white;
+
+        table {
+            border-collapse: collapse;
+        }
+
+        #list-heading {
+            background: $color-primary;
+            color     : white;
+            height    : 30px;
+        }
+
+        tr:nth-child(even) {
+            background: #CCC
+        }
+
+        tr:nth-child(odd) {
+            background: #FFF
+        }
+    }
+}
+
+.alert-box-wrapper {
+    width     : 100%;
+    height    : 100%;
+    background: #0000003b;
+    position  : absolute;
+    top       : 0;
+    left      : 0;
+    right     : 0;
+    bottom    : 0;
+    margin    : auto;
+
+    .alert-box {
+        width     : 450px;
+        height    : fit-content;
+        padding   : 25px 0;
+        background: $color-primary;
+        position  : absolute;
+        top       : 0;
+        left      : 0;
+        right     : 0;
+        bottom    : 0;
+        margin    : auto;
+        color     : white;
+        text-align: center;
+
+        &-message {
+            margin-bottom: 10px;
+            ;
+        }
     }
 }

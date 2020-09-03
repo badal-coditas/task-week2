@@ -105,3 +105,18 @@ body {
     width : 92%;
     height: 30px;
 }
+
+.user-registerd {
+    color      : green;
+    font-weight: 600;
+    margin-top : 10px;
+}
+
+.action-buttons {
+    background  : #203158;
+    border      : none;
+    padding     : 5px 15px;
+    color       : white;
+    margin-right: 5px;
+    cursor      : pointer;
+}

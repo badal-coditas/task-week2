@@ -1,90 +1,105 @@
 {
-    "registerUser": [
-        {
-            "id": 1,
-            "email": "badal.lohakar@gmail.com",
-            "password": "",
-            "name": ""
-        },
-        {
-            "id": 2,
-            "email": "badal@gmail.com",
-            "password": "badallove",
-            "name": "badal",
-            "number": 74514
-        },
-        {
-            "id": 3,
-            "email": "badal@gmail.com",
-            "password": "badallove",
-            "name": "badal",
-            "number": 74514
-        }
-    ],
-    "cardDetails": [
-        {
-            "id": 1,
-            "imagePath": "../../../assets/first.png",
-            "cardClass": "silver",
-            "quantity": 500,
-            "companyName": "abc",
-            "price": 1500
-        },
-        {
-            "id": 2,
-            "imagePath": "../../../assets/SEVEN.png",
-            "cardClass": "silver",
-            "quantity": 500,
-            "companyName": "abc",
-            "price": 1500
-        },
-        {
-            "id": 3,
-            "imagePath": "../../../assets/third.png",
-            "cardClass": "silver",
-            "quantity": 500,
-            "companyName": "abc",
-            "price": 1500
-        },
-        {
-            "id": 4,
-            "imagePath": "../../../assets/fifth.png",
-            "cardClass": "silver",
-            "quantity": 500,
-            "companyName": "abc",
-            "price": 1500
-        },
-        {
-            "id": 5,
-            "imagePath": "../../../assets/SIX.png",
-            "cardClass": "silver",
-            "quantity": 500,
-            "companyName": "abc",
-            "price": 1500
-        },
-        {
-            "id": 6,
-            "imagePath": "../../../assets/second.png",
-            "cardClass": "silver",
-            "quantity": 500,
-            "companyName": "abc",
-            "price": 1500
-        },
-        {
-            "id": 7,
-            "imagePath": "../../../assets/ten.png",
-            "cardClass": "silver",
-            "quantity": 500,
-            "price": 1500
-        },
-        {
-            "id": 8,
-            "email": "",
-            "companyName": "abc",
-            "quantity": 1500,
-            "price": 500,
-            "cardClass": "Platinum",
-            "imagePath": ""
-        }
-    ]
+  "registerUser": [
+    {
+      "id": 1,
+      "email": "badal.lohakar@gmail.com",
+      "password": "",
+      "name": ""
+    },
+    {
+      "id": 2,
+      "email": "badal@gmail.com",
+      "password": "badallove",
+      "name": "badal",
+      "number": 74514
+    },
+    {
+      "id": 3,
+      "email": "badal@gmail.com",
+      "password": "badallove",
+      "name": "badal",
+      "number": 74514
+    },
+    {
+      "id": 4,
+      "email": "demo@gmal.com",
+      "password": "demodemo",
+      "name": "demo",
+      "number": 7894564
+    },
+    {
+      "id": 5,
+      "email": "demo",
+      "password": "demodemo",
+      "name": "demo",
+      "number": 123
+    },
+    {
+      "id": 6,
+      "email": "demo",
+      "password": "demodemo",
+      "name": "demo",
+      "number": 1554
+    }
+  ],
+  "cardDetails": [
+    {
+      "id": 1,
+      "email": "",
+      "companyName": "ABC enterprise",
+      "quantity": 800,
+      "price": 1500,
+      "cardClass": "Silver",
+      "imagePath": "../../../assets/first.png"
+    },
+    {
+      "id": 2,
+      "email": "",
+      "companyName": "abc",
+      "quantity": 800,
+      "price": 1500,
+      "cardClass": "Platinum",
+      "imagePath": "../../../assets/second.png"
+    },
+    {
+      "id": 3,
+      "email": "",
+      "companyName": "abc",
+      "quantity": 900,
+      "price": 1500,
+      "cardClass": "Gold",
+      "imagePath": "../../../assets/third.png"
+    },
+    {
+      "id": 4,
+      "imagePath": "../../../assets/fifth.png",
+      "cardClass": "silver",
+      "quantity": 500,
+      "companyName": "abc",
+      "price": 1500
+    },
+    {
+      "id": 5,
+      "imagePath": "../../../assets/SIX.png",
+      "cardClass": "silver",
+      "quantity": 500,
+      "companyName": "abc",
+      "price": 1500
+    },
+    {
+      "id": 6,
+      "imagePath": "../../../assets/second.png",
+      "cardClass": "silver",
+      "quantity": 500,
+      "companyName": "abc",
+      "price": 1500
+    },
+    {
+      "id": 7,
+      "imagePath": "../../../assets/ten.png",
+      "cardClass": "silver",
+      "quantity": 500,
+      "price": 1500
+    }
+  ]
 }

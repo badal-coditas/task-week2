@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserHttpService } from 'src/app/user-http/user-http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-product',
@@ -7,8 +8,10 @@ import { UserHttpService } from 'src/app/user-http/user-http.service';
   styleUrls: ['./edit-product.component.scss']
 })
 export class EditProductComponent implements OnInit {
-
-  constructor(private httpService: UserHttpService) { }
+  selectToDelete;
+  alertBoxFlag = false;
+  constructor(private httpService: UserHttpService,
+    private router: Router) { }
   cardlist;
   ngOnInit(): void {
     this.getAllCardList();
@@ -18,6 +21,20 @@ export class EditProductComponent implements OnInit {
     this.httpService.getAllCardsData().subscribe(res => {
       this.cardlist = res;
     });
+  }
+
+  editCard(card) {
+    this.router.navigateByUrl('/home/edit-product/' + card.id);
+  }
+  deleteCard() {
+    this.httpService.deleteCard(this.selectToDelete).subscribe(res => {
+      this.getAllCardList();
+      this.alertBoxFlag = false;
+    });
+  }
+  preDeleteCard(card) {
+    this.selectToDelete = card.id;
+    this.alertBoxFlag = true;
   }
 
 }

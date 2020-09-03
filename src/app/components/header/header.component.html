@@ -6,13 +6,13 @@
         <div routerLink='/home'>
             Home
         </div>
-        <div routerLink='/login'>
+        <div routerLink='/login' *ngIf="!flagForUserLogged">
             Login
         </div>
-        <div routerLink='/register'>
+        <div routerLink='/register' *ngIf="!flagForUserLogged">
             Register
         </div>
-        <div class="outline">
+        <div class="outline" (click)="logout()">
             Logout
         </div>
     </div>

@@ -10,6 +10,7 @@ import { UserHttpService } from 'src/app/user-http/user-http.service';
 export class UserRegisterComponent implements OnInit {
   registerForm: FormGroup;
   submitted: boolean = false;
+  registerdFlag: boolean = false;
   constructor(private formBuilder: FormBuilder, private userHttp: UserHttpService) { }
 
   ngOnInit() {
@@ -35,7 +36,9 @@ export class UserRegisterComponent implements OnInit {
       }
       console.log(userData);
       this.userHttp.registerUser(userData).subscribe(resData => {
-        console.log(resData);
+        this.registerdFlag = true;
+        this.registerForm.reset();
+        this.submitted = false;
       })
     } else {
       this.submitted = true;

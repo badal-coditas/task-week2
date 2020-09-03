@@ -29,8 +29,25 @@ export class UserHttpService {
     return this.http.get(this.cardUrl, this.headerOption);
   }
 
-  addProduct(prouctData): Observable<any> {
-    return this.http.post(this.cardUrl, prouctData, this.headerOption);
+  addAndUpdateProductCard(prouctData, id): Observable<any> {
+    if (id == '') {
+      return this.http.post(this.cardUrl, prouctData, this.headerOption);
+
+    } else {
+      return this.http.put(this.cardUrl + "/" + id, prouctData, this.headerOption);
+
+    }
   }
 
+  getValueFromLocalStorage(key) {
+    return localStorage.getItem(key);
+  }
+
+  getDataFor(id): Observable<any> {
+    return this.http.get(this.cardUrl + '?id=' + id, this.headerOption);
+  }
+
+  deleteCard(id): Observable<any> {
+    return this.http.delete(this.cardUrl + "/" + id, this.headerOption);
+  }
 }
