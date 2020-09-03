@@ -1,0 +1,25 @@
+<div class="edit-wrapper">
+    <div class="edit-form">
+        <app-add-product></app-add-product>
+    </div>
+    <div class="edit-lists">
+        <table>
+            <tr class="list-heading">
+                <th>Image</th>
+                <th>Company name</th>
+                <th>Card Details</th>
+                <th>Actions</th>
+            </tr>
+
+            <tr *ngFor="let card of cardlist">
+                <td><img [src]="card.imagePath" width="100px"></td>
+                <td>{{card.companyName}}</td>
+                <td>{{card.price}}</td>
+                <td><button>Edit</button>
+                    <button>Delete</button></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>

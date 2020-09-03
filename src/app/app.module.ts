@@ -11,7 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductListsComponent } from './components/product-lists/product-lists.component';
 import { ProductSidebarComponent } from './components/product-sidebar/product-sidebar.component';
-import { CardsComponent } from './components/cards/cards.component'
+import { CardsComponent } from './components/cards/cards.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { CardsComponent } from './components/cards/cards.component'
     HeaderComponent,
     ProductListsComponent,
     ProductSidebarComponent,
-    CardsComponent
+    CardsComponent,
+    AddProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

@@ -29,4 +29,8 @@ export class UserHttpService {
     return this.http.get(this.cardUrl, this.headerOption);
   }
 
+  addProduct(prouctData): Observable<any> {
+    return this.http.post(this.cardUrl, prouctData, this.headerOption);
+  }
+
 }

@@ -60,6 +60,8 @@ body {
         }
     }
 
+
+
     &-heading {
         margin-bottom: 10px;
         font-size    : 1.5rem;
@@ -81,7 +83,7 @@ body {
 
         &:hover {
             background: rgb(187, 187, 187);
-            color     : white;
+            color     : black;
         }
 
         &:focus {
@@ -97,4 +99,9 @@ body {
     border       : 2px solid white;
     padding      : 5px 10px;
     border-radius: 6px;
+}
+
+.select-option {
+    width : 92%;
+    height: 30px;
 }

@@ -23,46 +23,68 @@
     ],
     "cardDetails": [
         {
+            "id": 1,
             "imagePath": "../../../assets/first.png",
             "cardClass": "silver",
             "quantity": 500,
+            "companyName": "abc",
             "price": 1500
         },
         {
+            "id": 2,
             "imagePath": "../../../assets/SEVEN.png",
             "cardClass": "silver",
             "quantity": 500,
+            "companyName": "abc",
             "price": 1500
         },
         {
+            "id": 3,
             "imagePath": "../../../assets/third.png",
             "cardClass": "silver",
             "quantity": 500,
+            "companyName": "abc",
             "price": 1500
         },
         {
+            "id": 4,
             "imagePath": "../../../assets/fifth.png",
             "cardClass": "silver",
             "quantity": 500,
+            "companyName": "abc",
             "price": 1500
         },
         {
+            "id": 5,
             "imagePath": "../../../assets/SIX.png",
             "cardClass": "silver",
             "quantity": 500,
+            "companyName": "abc",
             "price": 1500
         },
         {
+            "id": 6,
             "imagePath": "../../../assets/second.png",
             "cardClass": "silver",
             "quantity": 500,
+            "companyName": "abc",
             "price": 1500
         },
         {
+            "id": 7,
             "imagePath": "../../../assets/ten.png",
             "cardClass": "silver",
             "quantity": 500,
             "price": 1500
+        },
+        {
+            "id": 8,
+            "email": "",
+            "companyName": "abc",
+            "quantity": 1500,
+            "price": 500,
+            "cardClass": "Platinum",
+            "imagePath": ""
         }
     ]
 }
