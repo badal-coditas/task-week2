@@ -22,8 +22,36 @@ export class CardEffect {
             (actions: CardActions.LoadCard) =>
                 this.httpService.getAllCardsData().pipe(map(
                     (card: CardModal[]) =>
-                        // console.log(actions, "hello effect", card);
+
                         new CardActions.LoadCardSuccess(card)
+
+                ),
+                    catchError(err => of(new CardActions.LoadCardFailed(err))))
+        )
+    );
+
+    @Effect() AddCard$: Observable<Action> = this.actions$.pipe(
+        ofType<CardActions.AddCard>(VariablesActions.CARDS_ADD)
+        , mergeMap(
+            (actions: CardActions.AddCard) =>
+                this.httpService.addAndUpdateProductCard(actions.payload, actions.id).pipe(map(
+                    (card: CardModal[]) =>
+
+                        new CardActions.AddCardSuccess(actions.payload)
+
+                ),
+                    catchError(err => of(new CardActions.LoadCardFailed(err))))
+        )
+    );
+
+    @Effect() DeleteCard$: Observable<Action> = this.actions$.pipe(
+        ofType<CardActions.DeleteCard>(VariablesActions.CARDS_DELETE)
+        , mergeMap(
+            (actions: CardActions.DeleteCard) =>
+                this.httpService.deleteCard(actions.id).pipe(map(
+                    (card: CardModal[]) =>
+
+                        new CardActions.LoadCard()
 
                 ),
                     catchError(err => of(new CardActions.LoadCardFailed(err))))

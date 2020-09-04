@@ -49,7 +49,7 @@
       "companyName": "ABC enterprise",
       "quantity": 800,
       "price": 1500,
-      "cardClass": "Silver",
+      "cardClass": "Platinum",
       "imagePath": "../../../assets/first.png"
     },
     {
@@ -96,10 +96,21 @@
     },
     {
       "id": 7,
-      "imagePath": "../../../assets/ten.png",
-      "cardClass": "silver",
-      "quantity": 500,
-      "price": 1500
+      "email": "",
+      "companyName": "demo interprice",
+      "quantity": 458,
+      "price": 580,
+      "cardClass": "Platinum",
+      "imagePath": "../../../assets/ten.png"
+    },
+    {
+      "id": 8,
+      "email": "",
+      "companyName": "xyz",
+      "quantity": 780,
+      "price": 582,
+      "cardClass": "Silver",
+      "imagePath": ""
     }
   ]
 }

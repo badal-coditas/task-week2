@@ -30,7 +30,8 @@ export class UserHttpService {
   }
 
   addAndUpdateProductCard(prouctData, id): Observable<any> {
-    if (id == '') {
+    console.log(id, "id");
+    if (id == null || id == '') {
       return this.http.post(this.cardUrl, prouctData, this.headerOption);
 
     } else {

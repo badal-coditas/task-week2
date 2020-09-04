@@ -42,7 +42,7 @@ export class UserLoginComponent implements OnInit {
           this.store.dispatch({ type: VariablesActions.USER_LOGGED_IN });
           this.store.subscribe(state => {
             localStorage.setItem("loggedIn", state.componetReducer.loggedStatus);
-            console.log("login", state);
+            // console.log("login", state);
           })
           this.loginForm.reset();
           this.router.navigateByUrl('/home');

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserHttpService } from 'src/app/user-http/user-http.service';
 import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
+import * as CardActions from '../cards/store/card.actions'
+import { CardModal } from '../cards/modal/card.modal';
 
 @Component({
   selector: 'app-add-product',
@@ -16,7 +19,7 @@ export class AddProductComponent implements OnInit {
   saveUserDataFlag = false;
   addEditText = "Add";
   constructor(private formBuilder: FormBuilder, private userHttp: UserHttpService,
-    private activatedroute: ActivatedRoute) {
+    private activatedroute: ActivatedRoute, private store: Store<any>) {
     this.activatedroute.params.subscribe(data => {
 
       if (data?.id) {
@@ -39,17 +42,18 @@ export class AddProductComponent implements OnInit {
     console.log(this.addProduct);
 
     if (this.addProduct.valid) {
-      const productData = this.getUserDataObject(this.userId)
-      console.log(productData);
-      this.userHttp.addAndUpdateProductCard(productData, this.userId).subscribe(resData => {
-        this.saveUserDataFlag = true;
-      })
+      const productData: any = this.getUserDataObject(this.userId);
+      console.log(productData, "userid", this.userId);
+      this.store.dispatch(new CardActions.AddCard(productData, this.userId));
+      // this.userHttp.addAndUpdateProductCard(productData, this.userId).subscribe(resData => {
+      //   this.saveUserDataFlag = true;
+      // })
     } else {
       this.submitted = true;
     }
 
   }
-  getUserDataObject(id) {
+  getUserDataObject(id): CardModal {
     console.log(id);
     return {
       "id": id || '',

@@ -16,9 +16,9 @@ export class ProductSidebarComponent implements OnInit {
 
 
     this.store.subscribe(state => {
-      if (state.reducer.loggedStatus) {
+      if (state.componetReducer.loggedStatus) {
         this.userLoggedflag = true;
-      } else if (!state.reducer.loggedStatus) {
+      } else if (!state.componetReducer.loggedStatus) {
         this.userLoggedflag = false;
       }
     })
