@@ -14,6 +14,7 @@ export class AddProductComponent implements OnInit {
   userId = null;
   userImagePath = '';
   saveUserDataFlag = false;
+  addEditText = "Add";
   constructor(private formBuilder: FormBuilder, private userHttp: UserHttpService,
     private activatedroute: ActivatedRoute) {
     this.activatedroute.params.subscribe(data => {
@@ -62,7 +63,7 @@ export class AddProductComponent implements OnInit {
   }
   getDataAndAssignToform(id) {
     this.userHttp.getDataFor(id).subscribe(res => {
-
+      this.addEditText = "Update";
       this.f.companyName.setValue(res[0].companyName);
       this.f.quantity.setValue(res[0].quantity);
       this.f.price.setValue(res[0].price);

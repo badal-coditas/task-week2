@@ -12,7 +12,7 @@
         <div routerLink='/register' *ngIf="!flagForUserLogged">
             Register
         </div>
-        <div class="outline" (click)="logout()">
+        <div class="outline" (click)="logout()" *ngIf="flagForUserLogged">
             Logout
         </div>
     </div>

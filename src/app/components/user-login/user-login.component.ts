@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserHttpService } from 'src/app/user-http/user-http.service';
 import { Router } from '@angular/router';
-import { USER_LOGGED_FLAG } from '../../constant-variable/constants';
+import { VariablesActions } from '../../constant-variable/constants';
+import { Store } from '@ngrx/store'
+
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
@@ -13,11 +15,12 @@ export class UserLoginComponent implements OnInit {
   submited: boolean = false;
   constructor(private formBuilder: FormBuilder,
     private userHttp: UserHttpService,
-    private router: Router) { }
+    private router: Router,
+    private store: Store<any>) { }
 
   ngOnInit() {
 
-    if (this.userHttp.getValueFromLocalStorage(USER_LOGGED_FLAG) == "true") {
+    if (this.userHttp.getValueFromLocalStorage(VariablesActions.USER_LOGGED_FLAG) == "true") {
       this.router.navigateByUrl('/home');
     }
     this.loginForm = this.formBuilder.group({
@@ -35,7 +38,12 @@ export class UserLoginComponent implements OnInit {
       this.userHttp.checkLoginData(this.f.email.value, this.f.password.value).subscribe((resData) => {
         var tempArray: any = resData;
         if (tempArray.length != 0) {
-          localStorage.setItem("loggedIn", "true");
+
+          this.store.dispatch({ type: VariablesActions.USER_LOGGED_IN });
+          this.store.subscribe(state => {
+            localStorage.setItem("loggedIn", state.reducer.loggedStatus);
+            console.log("login", state);
+          })
           this.loginForm.reset();
           this.router.navigateByUrl('/home');
         } else {
