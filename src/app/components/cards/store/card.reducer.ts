@@ -16,7 +16,7 @@ export const initialCardState: CardState = {
 }
 
 export function cardReducer(state = initialCardState, action: CardActions): CardState {
-
+    console.log(action, "secondReducer");
     switch (action.type) {
         case VariablesActions.CARDS_LOAD: {
             return { ...state }
