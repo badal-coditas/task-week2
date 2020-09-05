@@ -1,40 +1,45 @@
 <div class="edit-wrapper">
+  <div class="edit-lists">
+    <table width="100%">
+      <tr id="list-heading">
+        <th>Image</th>
+        <th>Company name</th>
+        <th>Card Details</th>
+        <th>Actions</th>
+      </tr>
 
-    <div class="edit-lists">
-        <table width="100%">
-            <tr id="list-heading">
-                <th>Image</th>
-                <th>Company name</th>
-                <th>Card Details</th>
-                <th>Actions</th>
-            </tr>
-
-            <tr *ngFor="let card of cardlist">
-                <td><img [src]="card.imagePath" width="100px"></td>
-                <td>{{card.companyName}}</td>
-                <td>
-                    <ul>
-                        <li>Company Name :- {{card.companyName}}</li>
-                        <li>Quantity :- {{card.quantity}}</li>
-                        <li>Price :- Rs. {{card.price}} </li>
-                    </ul>
-                </td>
-                <td><button class="action-buttons" (click)="editCard(card)">Edit</button>
-                    <button class="action-buttons" (click)="preDeleteCard(card)">Delete</button></td>
-            </tr>
-
-        </table>
-
-    </div>
+      <tr *ngFor="let card of cardlist">
+        <td><img [src]="card.imagePath" width="100px" /></td>
+        <td>{{ card.companyName }}</td>
+        <td>
+          <ul>
+            <li>Company Name :- {{ card.companyName }}</li>
+            <li>Quantity :- {{ card.quantity }}</li>
+            <li>Price :- Rs. {{ card.price }}</li>
+          </ul>
+        </td>
+        <td>
+          <!-- <button class="action-buttons" (click)="editCard(card)">Edit</button>
+                    <button class="action-buttons" (click)="preDeleteCard(card)">Delete</button></td> -->
+          <button-element
+            [buttonName]="'Edit'"
+            (click)="editCard(card)"
+          ></button-element>
+          <button-element
+            [buttonName]="'Delete'"
+            (click)="preDeleteCard(card)"
+          ></button-element>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
 <div class="alert-box-wrapper" *ngIf="alertBoxFlag">
-    <div class="alert-box">
-        <div class="alert-box-message">
-            Are you sure to delete this card ?
-        </div>
-        <div>
-            <button class="form-login" (click)="alertBoxFlag = false">No</button>
-            <button class="form-login" (click)="deleteCard()">Yes</button>
-        </div>
+  <div class="alert-box">
+    <div class="alert-box-message">Are you sure to delete this card ?</div>
+    <div>
+      <button class="form-login" (click)="alertBoxFlag = false">No</button>
+      <button class="form-login" (click)="deleteCard()">Yes</button>
     </div>
+  </div>
 </div>
