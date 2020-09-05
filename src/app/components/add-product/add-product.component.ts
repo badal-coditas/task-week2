@@ -54,7 +54,7 @@ export class AddProductComponent implements OnInit {
       //
       // })
       this.store.subscribe((state) => {
-        // this.saveUserDataFlag = true;
+        this.saveUserDataFlag = true;
         console.log(state, 'add edit');
       });
     } else {

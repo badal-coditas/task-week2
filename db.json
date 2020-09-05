@@ -48,7 +48,7 @@
       "email": "",
       "companyName": "ABC enterprise",
       "quantity": 800,
-      "price": 100,
+      "price": 250,
       "cardClass": "Platinum",
       "imagePath": "../../../assets/first.png"
     },
@@ -57,7 +57,7 @@
       "email": "",
       "companyName": "abc",
       "quantity": 800,
-      "price": 1500,
+      "price": 150,
       "cardClass": "Platinum",
       "imagePath": "../../../assets/second.png"
     },
