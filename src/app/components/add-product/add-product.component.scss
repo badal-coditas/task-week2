@@ -1,14 +1,14 @@
-@import '../../../styles.scss';
+@import "../../../styles.scss";
 
 .add-product {
-    width     : 450px;
-    height    : fit-content;
-    text-align: center;
-    background: #203158;
-    border-top: 2px solid white;
+  width: 450px;
+  height: fit-content;
+  text-align: center;
+  background: var(--theme-bg-color);
+  border: 1px solid var(--theme-text-color);
 }
 
 .data-saved {
-    color     : #13ff03;
-    margin-top: 10px;
+  color: #13ff03;
+  margin-top: 10px;
 }

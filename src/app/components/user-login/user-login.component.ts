@@ -55,6 +55,7 @@ export class UserLoginComponent implements OnInit {
               );
               console.log('login', state);
             });
+
             this.loginForm.reset();
             this.router.navigateByUrl('/home');
           } else {

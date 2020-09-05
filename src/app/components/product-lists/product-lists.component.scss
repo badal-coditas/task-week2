@@ -1,15 +1,17 @@
+@import "../../../styles.scss";
+body {
+  background: var(--theme-body);
+}
 .product {
-    &-wrapper {
-        display: flex;
-    }
+  &-wrapper {
+    display: flex;
+  }
 
-    &-sidebar {
-        width: 200px;
+  &-sidebar {
+    width: 200px;
+  }
 
-    }
-
-    &-option-result {
-        margin: auto;
-    }
-
+  &-option-result {
+    margin: auto;
+  }
 }

@@ -1,62 +1,61 @@
-@import '../../../styles.scss';
+@import "../../../styles.scss";
 
 .edit-wrapper {
+  .edit-lists {
+    height: 800px;
+    width: 800px;
+    overflow: scroll;
 
-
-    .edit-lists {
-        height    : 800px;
-        width     : 800px;
-        overflow  : scroll;
-        border-top: 2px solid white;
-
-        table {
-            border-collapse: collapse;
-        }
-
-        #list-heading {
-            background: $color-primary;
-            color     : white;
-            height    : 30px;
-        }
-
-        tr:nth-child(even) {
-            background: #e8e8e8;
-        }
-
-        tr:nth-child(odd) {
-            background: #FFF
-        }
+    table {
+      border-collapse: collapse;
     }
+
+    #list-heading {
+      background: var(--theme-bg-color);
+      color: var(--theme-text-color);
+      height: 30px;
+    }
+
+    tr:nth-child(even) {
+      background: var(--theme-even-list-bg);
+      color: var(--theme-text-color-opp);
+    }
+
+    tr:nth-child(odd) {
+      background: var(--theme-odd-list-bg);
+      color: var(--theme-text-color-opp);
+    }
+  }
 }
 
 .alert-box-wrapper {
-    width     : 100%;
-    height    : 100%;
-    background: #0000003b;
-    position  : absolute;
-    top       : 0;
-    left      : 0;
-    right     : 0;
-    bottom    : 0;
-    margin    : auto;
+  width: 100%;
+  height: 100%;
+  background: #0000003b;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 
-    .alert-box {
-        width     : 450px;
-        height    : fit-content;
-        padding   : 25px 0;
-        background: $color-primary;
-        position  : absolute;
-        top       : 0;
-        left      : 0;
-        right     : 0;
-        bottom    : 0;
-        margin    : auto;
-        color     : white;
-        text-align: center;
+  .alert-box {
+    width: 450px;
+    height: fit-content;
+    padding: 25px 0;
+    background: var(--theme-bg-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: var(--theme-text-color);
+    text-align: center;
+    border: 1px solid var(--theme-text-color);
 
-        &-message {
-            margin-bottom: 10px;
-            ;
-        }
+    &-message {
+      margin-bottom: 10px;
     }
+  }
 }

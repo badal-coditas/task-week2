@@ -1,29 +1,29 @@
-@import '../../../styles.scss';
+@import "../../../styles.scss";
 
 .sidebar-list {
-    background: $color-primary;
-    border-top: 2px solid white;
+  background: var(--theme-bg-color);
+  border-right: 2px solid var(--theme-text-color);
 
-    ul {
-        display             : block;
-        list-style-type     : none;
-        margin-block-start  : 0em;
-        margin-block-end    : 1em;
-        margin-inline-start : 0px;
-        margin-inline-end   : 0px;
-        padding-inline-start: 0px;
-        color               : white;
-        padding             : 10px 0;
+  ul {
+    display: block;
+    list-style-type: none;
+    margin-block-start: 0em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    color: var(--theme-text-color);
+    padding: 10px 0;
 
-        li {
-            padding: 7px;
-        }
-
-        li:hover {
-            background  : white;
-            cursor      : pointer;
-            color       : black;
-            border-right: 2px solid $color-primary;
-        }
+    li {
+      padding: 7px;
     }
+
+    li:hover {
+      background: var(--theme-text-color);
+      cursor: pointer;
+      color: black;
+      border-right: 2px solid var(--theme-bg-color);
+    }
+  }
 }
