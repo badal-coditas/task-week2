@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserHttpService } from 'src/app/user-http/user-http.service';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import * as cardAction from '../cards/store/card.actions'
 
 @Component({
   selector: 'app-edit-product',
@@ -22,7 +23,10 @@ export class EditProductComponent implements OnInit {
     // this.httpService.getAllCardsData().subscribe(res => {
     //   this.cardlist = res;
     // });
-    // this.store.dispatch();
+    this.store.dispatch(new cardAction.LoadCard());
+    this.store.subscribe(state => {
+      this.cardlist = state.reducer.card;
+    });
   }
 
   editCard(card) {
@@ -35,6 +39,7 @@ export class EditProductComponent implements OnInit {
     });
   }
   preDeleteCard(card) {
+    console.log(card.id);
     this.selectToDelete = card.id;
     this.alertBoxFlag = true;
   }

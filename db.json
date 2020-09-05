@@ -102,15 +102,6 @@
       "price": 580,
       "cardClass": "Platinum",
       "imagePath": "../../../assets/ten.png"
-    },
-    {
-      "id": 8,
-      "email": "",
-      "companyName": "xyz",
-      "quantity": 780,
-      "price": 582,
-      "cardClass": "Silver",
-      "imagePath": ""
     }
   ]
 }

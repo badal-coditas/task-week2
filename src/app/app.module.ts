@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,9 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
 import { ComponentReducer } from './components/store/component.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { cardReducer } from './components/cards/store/card.reducer'
+
+import { IndividualCard } from './components/cards/card-lit-element/individual-card'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +46,10 @@ import { cardReducer } from './components/cards/store/card.reducer'
     EffectsModule.forRoot([CardEffect])
   ],
   providers: [UserHttpService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
+  entryComponents: [IndividualCard]
 })
 export class AppModule { }
