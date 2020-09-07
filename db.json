@@ -105,15 +105,6 @@
       "price": 580,
       "cardClass": "Platinum",
       "imagePath": "../../../assets/ten.png"
-    },
-    {
-      "id": 8,
-      "email": "badal@gmail.com",
-      "companyName": "abc",
-      "quantity": 50,
-      "price": 150,
-      "cardClass": "Gold",
-      "imagePath": ""
     }
   ]
 }
