@@ -35,4 +35,5 @@ export type CardActions =
   | LoadCardFailed
   | AddCard
   | AddCardSuccess
-  | DeleteCard;
+  | DeleteCard
+  | LoadCardForAll;

@@ -31,7 +31,7 @@ export class EditProductComponent implements OnInit {
     this.store.dispatch(new cardAction.LoadCard());
     this.store.subscribe((state) => {
       this.cardlist = state.reducer.card;
-      console.log(state.reducer.card, 'card for id', this.cardlist);
+      // console.log(state.reducer.card, 'card for id', this.cardlist);
       if (this.cardlist.length == 0) {
         this.noData = true;
       } else {
