@@ -13,7 +13,7 @@ export class CardsComponent implements OnInit {
   constructor(private userHttp: UserHttpService, private store: Store<any>) {}
 
   ngOnInit(): void {
-    this.store.dispatch(new CardActions.LoadCard());
+    this.store.dispatch(new CardActions.LoadCardForAll());
     this.store.subscribe((state) => {
       this.allCards = state.reducer.card;
     });

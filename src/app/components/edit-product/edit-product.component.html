@@ -1,6 +1,6 @@
 <div class="edit-wrapper">
   <div class="edit-lists">
-    <table width="100%">
+    <table width="100%" *ngIf="!noData">
       <tr id="list-heading">
         <th>Image</th>
         <th>Company name</th>
@@ -32,6 +32,7 @@
         </td>
       </tr>
     </table>
+    <div *ngIf="noData">For this User no card is available.</div>
   </div>
 </div>
 <div class="alert-box-wrapper" *ngIf="alertBoxFlag">

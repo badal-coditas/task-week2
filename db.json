@@ -36,7 +36,7 @@
     },
     {
       "id": 6,
-      "email": "demo",
+      "email": "badal@gmail.com",
       "password": "demodemo",
       "name": "demo",
       "number": 1554
@@ -45,7 +45,7 @@
   "cardDetails": [
     {
       "id": 1,
-      "email": "",
+      "email": "badal@gmail.com",
       "companyName": "ABC enterprise",
       "quantity": 800,
       "price": 2500,
@@ -54,7 +54,7 @@
     },
     {
       "id": 2,
-      "email": "",
+      "email": "badal@gmail.com",
       "companyName": "abc",
       "quantity": 800,
       "price": 150,
@@ -63,7 +63,7 @@
     },
     {
       "id": 3,
-      "email": "",
+      "email": "badal@gmail.com",
       "companyName": "abc",
       "quantity": 900,
       "price": 1500,
@@ -76,7 +76,8 @@
       "cardClass": "silver",
       "quantity": 500,
       "companyName": "abc",
-      "price": 1500
+      "price": 1500,
+      "email": "badal@gmail.com"
     },
     {
       "id": 5,
@@ -84,7 +85,8 @@
       "cardClass": "silver",
       "quantity": 500,
       "companyName": "abc",
-      "price": 1500
+      "price": 1500,
+      "email": "badal@gmail.com"
     },
     {
       "id": 6,
@@ -92,16 +94,26 @@
       "cardClass": "silver",
       "quantity": 500,
       "companyName": "abc",
-      "price": 1500
+      "price": 1500,
+      "email": "badal@gmail.com"
     },
     {
       "id": 7,
-      "email": "",
+      "email": "badal1@gmail.com",
       "companyName": "demo interprice",
       "quantity": 458,
       "price": 580,
       "cardClass": "Platinum",
       "imagePath": "../../../assets/ten.png"
+    },
+    {
+      "id": 8,
+      "email": "badal@gmail.com",
+      "companyName": "abc",
+      "quantity": 50,
+      "price": 150,
+      "cardClass": "Gold",
+      "imagePath": ""
     }
   ]
 }

@@ -59,7 +59,7 @@ export class AddProductComponent implements OnInit {
   getUserDataObject(id: any): CardModal {
     return {
       id: id || '',
-      email: '',
+      email: localStorage.getItem('userId'),
       companyName: this.f.companyName.value,
       quantity: this.f.quantity.value,
       price: this.f.price.value,

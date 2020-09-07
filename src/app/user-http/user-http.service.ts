@@ -30,6 +30,11 @@ export class UserHttpService {
     return this.http.get(this.cardUrl, this.headerOption);
   }
 
+  getAllCardsDataFor() {
+    var userId = localStorage.getItem('userId');
+    return this.http.get(this.cardUrl + '?email=' + userId, this.headerOption);
+  }
+
   addAndUpdateProductCard(productData: any, id: any): Observable<any> {
     if (id == null || id == '') {
       return this.http.post(this.cardUrl, productData, this.headerOption);

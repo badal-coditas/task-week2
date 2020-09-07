@@ -48,12 +48,15 @@ export class UserLoginComponent implements OnInit {
         .subscribe((resData) => {
           var tempArray: any = resData;
           if (tempArray.length != 0) {
+            localStorage.setItem('userId', this.f.email.value);
             this.store.dispatch({ type: VariablesActions.USER_LOGGED_IN });
             this.store.subscribe((state) => {
-              localStorage.setItem(
-                'loggedIn',
-                state.componetReducer.loggedStatus
-              );
+              if (state.componetReducer?.loggedStatus) {
+                localStorage.setItem(
+                  'loggedIn',
+                  state.componetReducer.loggedStatus
+                );
+              }
             });
 
             this.loginForm.reset();

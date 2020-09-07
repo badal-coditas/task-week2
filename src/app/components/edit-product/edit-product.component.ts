@@ -13,6 +13,7 @@ import './edit-list-lit-element/list-button';
 export class EditProductComponent implements OnInit {
   selectToDelete: any;
   alertBoxFlag = false;
+  noData = false;
   constructor(
     private httpService: UserHttpService,
     private router: Router,
@@ -30,6 +31,12 @@ export class EditProductComponent implements OnInit {
     this.store.dispatch(new cardAction.LoadCard());
     this.store.subscribe((state) => {
       this.cardlist = state.reducer.card;
+      console.log(state.reducer.card, 'card for id', this.cardlist);
+      if (this.cardlist.length == 0) {
+        this.noData = true;
+      } else {
+        this.noData = false;
+      }
     });
   }
 
