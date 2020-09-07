@@ -1,27 +1,40 @@
-# ProductCloths
+# ProductCard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
+# Latest Angular CLI
 
-## Development server
+Yes
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# No other library use for design [Bootstrap, Material]
 
-## Code scaffolding
+yes custom html and scss
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# NgRx for Sate Management
 
-## Build
+yes
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. For Login and Logout Component
+2. For product CRUD operation
 
-## Running unit tests
+# Test Cases For All Component Using Jest
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+yes integrated test case not written
 
-## Running end-to-end tests
+# Application is accessible
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+yes
 
-## Further help
+# Storybook
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+No
+
+# Theme [Light | Dark]
+
+yes
+
+# lit-Element
+
+yes
+
+# Device and Browser Support
+
+yes
