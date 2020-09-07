@@ -28,7 +28,6 @@ export class HeaderComponent implements OnInit {
     }
 
     this.store.subscribe((state) => {
-      console.log(state, 'header');
       if (state.componetReducer.loggedStatus) {
         this.flagForUserLogged = true;
       } else if (!state.componetReducer.loggedStatus) {

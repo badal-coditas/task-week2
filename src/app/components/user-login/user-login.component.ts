@@ -12,7 +12,7 @@ import { Store } from '@ngrx/store';
 })
 export class UserLoginComponent implements OnInit {
   loginForm: FormGroup;
-  submited: boolean = false;
+  submitted: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private userHttp: UserHttpService,
@@ -42,7 +42,7 @@ export class UserLoginComponent implements OnInit {
   }
   login() {
     if (this.loginForm.valid) {
-      this.submited = false;
+      this.submitted = false;
       this.userHttp
         .checkLoginData(this.f.email.value, this.f.password.value)
         .subscribe((resData) => {
@@ -54,17 +54,16 @@ export class UserLoginComponent implements OnInit {
                 'loggedIn',
                 state.componetReducer.loggedStatus
               );
-              console.log('login', state);
             });
 
             this.loginForm.reset();
             this.router.navigateByUrl('/home');
           } else {
-            this.submited = true;
+            this.submitted = true;
           }
         });
     } else {
-      this.submited = true;
+      this.submitted = true;
     }
   }
 }

@@ -42,7 +42,6 @@ export class EditProductComponent implements OnInit {
     });
   }
   preDeleteCard(card: any) {
-    console.log(card.id);
     this.selectToDelete = card.id;
     this.alertBoxFlag = true;
   }

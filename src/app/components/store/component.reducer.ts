@@ -5,7 +5,6 @@ const initialState = {
     localStorage.getItem(VariablesActions.USER_LOGGED_FLAG) || false,
 };
 export function ComponentReducer(state = initialState, action: any) {
-  console.log(action.type);
   switch (action.type) {
     case VariablesActions.USER_LOGGED_IN: {
       return {

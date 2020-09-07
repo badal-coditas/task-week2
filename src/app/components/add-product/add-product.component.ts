@@ -44,25 +44,19 @@ export class AddProductComponent implements OnInit {
   }
 
   addAndUpdateProductCard() {
-    console.log(this.addProduct);
-
     if (this.addProduct.valid) {
       const productData: any = this.getUserDataObject(this.userId);
-      // console.log(productData, "userid", this.userId);
+
       this.store.dispatch(new CardActions.AddCard(productData, this.userId));
-      // this.userHttp.addAndUpdateProductCard(productData, this.userId).subscribe(resData => {
-      //
-      // })
+
       this.store.subscribe((state) => {
         this.saveUserDataFlag = true;
-        console.log(state, 'add edit');
       });
     } else {
       this.submitted = true;
     }
   }
   getUserDataObject(id: any): CardModal {
-    console.log(id);
     return {
       id: id || '',
       email: '',
@@ -82,7 +76,6 @@ export class AddProductComponent implements OnInit {
       this.f.selectedClass.setValue(res[0].cardClass);
       this.userId = res[0].id;
       this.userImagePath = res[0].imagePath;
-      console.log('userid', this.userId);
     });
   }
 }
