@@ -52,6 +52,6 @@ import { ListButtonElement } from './components/edit-product/edit-list-lit-eleme
   providers: [UserHttpService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  entryComponents: [IndividualCard, ListButtonElement],
+  // entryComponents: [IndividualCard, ListButtonElement],
 })
 export class AppModule {}

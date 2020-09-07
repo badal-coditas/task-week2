@@ -3,6 +3,7 @@ import { UserHttpService } from 'src/app/user-http/user-http.service';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as cardAction from '../cards/store/card.actions';
+import './edit-list-lit-element/list-button';
 
 @Component({
   selector: 'app-edit-product',
