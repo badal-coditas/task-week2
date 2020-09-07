@@ -17,7 +17,7 @@ yes
 
 # Test Cases For All Component Using Jest
 
-yes integrated test cases not written
+yes integrated test cases not written.
 
 # Application is accessible
 
