@@ -30,13 +30,13 @@ export class UserHttpService {
     return this.http.get(this.cardUrl, this.headerOption);
   }
 
-  addAndUpdateProductCard(prouctData: any, id: any): Observable<any> {
+  addAndUpdateProductCard(productData: any, id: any): Observable<any> {
     if (id == null || id == '') {
-      return this.http.post(this.cardUrl, prouctData, this.headerOption);
+      return this.http.post(this.cardUrl, productData, this.headerOption);
     } else {
       return this.http.put(
         this.cardUrl + '/' + id,
-        prouctData,
+        productData,
         this.headerOption
       );
     }
