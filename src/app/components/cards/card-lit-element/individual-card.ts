@@ -47,5 +47,5 @@ export class IndividualCard extends LitElement {
     `;
   }
   @property({ type: [] })
-  card;
+  card: any;
 }

@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
     this.store.dispatch({ type: VariablesActions.USER_LOGGED_OUT });
     this.router.navigateByUrl('login');
   }
-  themeChanged(e) {
+  themeChanged(e: any) {
     if (e.target.value == 'dark') {
       this.setThemeColor(
         '#3f3f40',
@@ -70,15 +70,15 @@ export class HeaderComponent implements OnInit {
     }
   }
   setThemeColor(
-    color1,
-    color2,
-    color3,
-    color4,
-    color5,
-    color6,
-    color7,
-    color8,
-    color9
+    color1: string,
+    color2: string,
+    color3: string,
+    color4: string,
+    color5: string,
+    color6: string,
+    color7: string,
+    color8: string,
+    color9: string
   ) {
     document.documentElement.style.setProperty('--theme-bg-color', color1);
     document.documentElement.style.setProperty('--theme-text-color', color2);

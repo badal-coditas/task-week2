@@ -38,6 +38,7 @@ export class UserLoginComponent implements OnInit {
   }
   resetForm() {
     this.loginForm.reset();
+    return true;
   }
   login() {
     if (this.loginForm.valid) {

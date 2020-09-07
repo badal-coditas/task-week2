@@ -14,7 +14,7 @@ import { CardModal } from '../cards/modal/card.modal';
 export class AddProductComponent implements OnInit {
   addProduct: FormGroup;
   submitted: boolean = false;
-  userId = null;
+  userId: any = null;
   userImagePath = '';
   saveUserDataFlag = false;
   addEditText = 'Add';
@@ -61,7 +61,7 @@ export class AddProductComponent implements OnInit {
       this.submitted = true;
     }
   }
-  getUserDataObject(id): CardModal {
+  getUserDataObject(id: any): CardModal {
     console.log(id);
     return {
       id: id || '',
@@ -73,7 +73,7 @@ export class AddProductComponent implements OnInit {
       imagePath: this.userImagePath || '',
     };
   }
-  getDataAndAssignToform(id) {
+  getDataAndAssignToform(id: any) {
     this.userHttp.getDataFor(id).subscribe((res) => {
       this.addEditText = 'Update';
       this.f.companyName.setValue(res[0].companyName);

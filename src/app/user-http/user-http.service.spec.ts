@@ -1,16 +1,11 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 
 import { UserHttpService } from './user-http.service';
+describe('UserRegisterComponent', () => {
+  let component: UserHttpService;
+  let fixture: ComponentFixture<UserHttpService>;
 
-describe('UserHttpService', () => {
-  let service: UserHttpService;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(UserHttpService);
-  });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  test('should have a default name', () => {
+    expect(false).toBeFalsy();
   });
 });
