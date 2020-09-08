@@ -40,7 +40,10 @@ body {
     left: 0;
     margin: auto;
     text-align: center;
-
+    @media only screen and (max-width: 500px) {
+      width: 80%;
+      height: fit-content;
+    }
     &-inputs {
       width: 90%;
       height: 90%;

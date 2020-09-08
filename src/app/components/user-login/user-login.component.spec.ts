@@ -6,6 +6,6 @@ describe('UserRegisterComponent', () => {
   let fixture: ComponentFixture<UserLoginComponent>;
 
   test('should have a default name', () => {
-    expect(false).toBeFalsy();
+    expect('login').toEqual('login');
   });
 });

@@ -3,8 +3,11 @@
 .edit-wrapper {
   .edit-lists {
     height: 800px;
-    width: 800px;
+    width: 100%;
     overflow: scroll;
+    @media only screen and (max-width: 750px) {
+      width: 95%;
+    }
 
     table {
       border-collapse: collapse;

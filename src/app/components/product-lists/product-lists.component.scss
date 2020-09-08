@@ -5,6 +5,9 @@ body {
 .product {
   &-wrapper {
     display: flex;
+    @media only screen and (max-width: 750px) {
+      display: contents;
+    }
   }
 
   &-sidebar {
@@ -13,5 +16,9 @@ body {
 
   &-option-result {
     margin: auto;
+    @media only screen and (max-width: 750px) {
+      text-align: center;
+      text-align: -webkit-center;
+    }
   }
 }

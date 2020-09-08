@@ -28,7 +28,7 @@ export class IndividualCard extends LitElement {
 
   render() {
     return html`
-      <img src=${this.card['imagePath']} />
+      <img src=${this.card['imagePath']} alt="user card sample image" />
       <div class="card-details">
         <span>Type</span>
 
