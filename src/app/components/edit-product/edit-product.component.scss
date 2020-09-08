@@ -2,9 +2,8 @@
 
 .edit-wrapper {
   .edit-lists {
-    height: 800px;
-    width: 100%;
-    overflow: scroll;
+    height: fit-content;
+    width: 70vw;
     @media only screen and (max-width: 750px) {
       width: 95%;
     }

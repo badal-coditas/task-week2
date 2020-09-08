@@ -40,6 +40,13 @@
       "password": "demodemo",
       "name": "demo",
       "number": 1554
+    },
+    {
+      "id": 7,
+      "email": "democ@gmail.com",
+      "password": "democdemoc",
+      "name": "democ",
+      "number": 8546464
     }
   ],
   "cardDetails": [
