@@ -25,7 +25,7 @@ No
 
 # Storybook
 
-No
+yes For card component
 
 # Theme [Light | Dark]
 
