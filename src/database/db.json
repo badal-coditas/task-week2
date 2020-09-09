@@ -47,6 +47,34 @@
       "password": "democdemoc",
       "name": "democ",
       "number": 8546464
+    },
+    {
+      "id": 8,
+      "email": "testDemo@gmail.com",
+      "password": "123456",
+      "name": "testdemo",
+      "number": 789465
+    },
+    {
+      "id": 9,
+      "email": "badal@gmal.com",
+      "password": "badallove",
+      "name": "badal",
+      "number": 4536
+    },
+    {
+      "id": 10,
+      "email": "demo@gmail.com",
+      "password": "demodemo",
+      "name": "demo",
+      "number": 456
+    },
+    {
+      "id": 11,
+      "email": "demo@gmail.com",
+      "password": "demodemo",
+      "name": "demo",
+      "number": 546
     }
   ],
   "cardDetails": [
@@ -112,6 +140,15 @@
       "price": 580,
       "cardClass": "Platinum",
       "imagePath": "../../../assets/ten.png"
+    },
+    {
+      "id": 8,
+      "email": null,
+      "companyName": "democ",
+      "quantity": 45,
+      "price": 452,
+      "cardClass": "Platinum",
+      "imagePath": "../../../assets/Platinum.png"
     }
   ]
 }

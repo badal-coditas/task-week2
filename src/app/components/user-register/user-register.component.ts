@@ -10,7 +10,7 @@ import { UserHttpService } from 'src/app/user-http/user-http.service';
 export class UserRegisterComponent implements OnInit {
   registerForm: FormGroup;
   submitted: boolean = false;
-  registerdFlag: boolean = false;
+  registeredFlag: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private userHttp: UserHttpService
@@ -39,7 +39,8 @@ export class UserRegisterComponent implements OnInit {
       };
 
       this.userHttp.registerUser(userData).subscribe((resData) => {
-        this.registerdFlag = true;
+        // console.log(resData);
+        this.registeredFlag = true;
         this.registerForm.reset();
         this.submitted = false;
       });
