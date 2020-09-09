@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private store: Store<any>
   ) {}
-  flagForUserLogged: boolean;
+  flagForUserLogged: boolean = false;
   ngOnInit(): void {
     if (
       this.userHttp.getValueFromLocalStorage(
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
     } else {
       this.flagForUserLogged = false;
     }
-
+    console.log(this.flagForUserLogged);
     this.store.subscribe((state) => {
       if (state.userLoggedReducer.loggedStatus) {
         this.flagForUserLogged = true;

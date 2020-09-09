@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpHandler } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { VariablesActions } from '../constant-variable/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -31,7 +32,9 @@ export class UserHttpService {
   }
 
   getAllCardsDataFor() {
-    var userId = localStorage.getItem('userId');
+    var userId = localStorage.getItem(
+      VariablesActions.LOCAL_STORAGE_USER_EMAIL
+    );
     return this.http.get(this.cardUrl + '?email=' + userId, this.headerOption);
   }
 

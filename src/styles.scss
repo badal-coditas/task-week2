@@ -76,7 +76,12 @@ body {
   &-heading {
     margin-bottom: 10px;
     font-size: 1.5rem;
-    color: gray;
+    color: var(--theme-text-color);
+    &-dark {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      color: #000000;
+    }
   }
 
   &-buttons {

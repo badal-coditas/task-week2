@@ -21,6 +21,11 @@ export class UserLoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    console.log(
+      typeof this.userHttp.getValueFromLocalStorage(
+        VariablesActions.USER_LOGGED_FLAG
+      )
+    );
     if (
       this.userHttp.getValueFromLocalStorage(
         VariablesActions.USER_LOGGED_FLAG
