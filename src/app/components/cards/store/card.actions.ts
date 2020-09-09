@@ -25,6 +25,10 @@ export class DeleteCard implements Action {
   readonly type = VariablesActions.CARDS_DELETE;
   constructor(public id: any) {}
 }
+export class DeleteCardSuccess implements Action {
+  readonly type = VariablesActions.CARDS_DELETE_SUCCESS;
+  constructor(public message: any) {}
+}
 
 export class LoadCardForAll implements Action {
   readonly type = VariablesActions.CARDS_LOAD_ALL;
@@ -36,4 +40,5 @@ export type CardActions =
   | AddCard
   | AddCardSuccess
   | DeleteCard
-  | LoadCardForAll;
+  | LoadCardForAll
+  | DeleteCardSuccess;

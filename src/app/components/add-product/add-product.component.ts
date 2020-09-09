@@ -36,7 +36,7 @@ export class AddProductComponent implements OnInit {
       companyName: ['', Validators.required],
       quantity: ['', Validators.required],
       price: ['', Validators.required],
-      selectedClass: ['Select Card Type', Validators.required],
+      selectedClass: ['Silver', Validators.required],
     });
   }
   get f() {
@@ -46,11 +46,10 @@ export class AddProductComponent implements OnInit {
   addAndUpdateProductCard() {
     if (this.addProduct.valid) {
       const productData: any = this.getUserDataObject(this.userId);
-
       this.store.dispatch(new CardActions.AddCard(productData, this.userId));
-
       this.store.subscribe((state) => {
         this.saveUserDataFlag = true;
+        this.addProduct.reset();
       });
     } else {
       this.submitted = true;
@@ -64,7 +63,7 @@ export class AddProductComponent implements OnInit {
       quantity: this.f.quantity.value,
       price: this.f.price.value,
       cardClass: this.f.selectedClass.value,
-      imagePath: this.userImagePath || '',
+      imagePath: '../../../assets/' + this.f.selectedClass.value + '.png',
     };
   }
   getDataAndAssignToform(id: any) {

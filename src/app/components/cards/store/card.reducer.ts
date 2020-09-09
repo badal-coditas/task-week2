@@ -5,6 +5,7 @@ import * as fromRoot from '../state/card.state';
 
 export interface CardState {
   card: CardModal[];
+  message: any;
 }
 
 export interface AppSate extends fromRoot.AppState {
@@ -13,6 +14,7 @@ export interface AppSate extends fromRoot.AppState {
 
 export const initialCardState: CardState = {
   card: [],
+  message: null,
 };
 
 export function cardReducer(
@@ -41,6 +43,9 @@ export function cardReducer(
     }
     case VariablesActions.CARDS_DELETE: {
       return { ...state };
+    }
+    case VariablesActions.CARDS_DELETE_SUCCESS: {
+      return { ...state, ...{ message: action.message } };
     }
 
     default:

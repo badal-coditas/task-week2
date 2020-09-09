@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as cardAction from '../cards/store/card.actions';
 import './edit-list-lit-element/list-button';
+import { VariablesActions } from 'src/app/constant-variable/constants';
 
 @Component({
   selector: 'app-edit-product',
@@ -22,32 +23,34 @@ export class EditProductComponent implements OnInit {
   cardlist: any;
   ngOnInit(): void {
     this.getAllCardList();
-  }
-
-  getAllCardList() {
-    // this.httpService.getAllCardsData().subscribe(res => {
-    //   this.cardlist = res;
-    // });
-    this.store.dispatch(new cardAction.LoadCard());
     this.store.subscribe((state) => {
       this.cardlist = state.reducer.card;
-      // console.log(state.reducer.card, 'card for id', this.cardlist);
       if (this.cardlist.length == 0) {
         this.noData = true;
       } else {
         this.noData = false;
       }
+
+      if (state.reducer?.message == 'Card Deleted') {
+        this.alertBoxFlag = false;
+      }
     });
+  }
+
+  getAllCardList() {
+    this.store.dispatch(new cardAction.LoadCard());
   }
 
   editCard(card: any) {
     this.router.navigateByUrl('/home/edit-product/' + card.id);
   }
   deleteCard() {
-    this.httpService.deleteCard(this.selectToDelete).subscribe((res) => {
-      this.getAllCardList();
-      this.alertBoxFlag = false;
-    });
+    // this.httpService.deleteCard(this.selectToDelete).subscribe((res) => {
+    //   this.getAllCardList();
+    //   this.alertBoxFlag = false;
+    // });
+
+    this.store.dispatch(new cardAction.DeleteCard(this.selectToDelete));
   }
   preDeleteCard(card: any) {
     this.selectToDelete = card.id;

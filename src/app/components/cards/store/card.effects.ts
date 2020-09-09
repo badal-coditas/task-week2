@@ -56,7 +56,19 @@ export class CardEffect {
     ofType<CardActions.DeleteCard>(VariablesActions.CARDS_DELETE),
     mergeMap((actions: CardActions.DeleteCard) =>
       this.httpService.deleteCard(actions.id).pipe(
-        map((card: CardModal[]) => new CardActions.LoadCard()),
+        map(() => new CardActions.DeleteCardSuccess('Card Deleted')),
+        catchError((err) => of(new CardActions.LoadCardFailed(err)))
+      )
+    )
+  );
+
+  @Effect() DeleteCardSuccess$: Observable<Action> = this.actions$.pipe(
+    ofType<CardActions.DeleteCardSuccess>(
+      VariablesActions.CARDS_DELETE_SUCCESS
+    ),
+    mergeMap((actions: CardActions.DeleteCardSuccess) =>
+      this.httpService.getAllCardsDataFor().pipe(
+        map((card: CardModal[]) => new CardActions.LoadCardSuccess(card)),
         catchError((err) => of(new CardActions.LoadCardFailed(err)))
       )
     )

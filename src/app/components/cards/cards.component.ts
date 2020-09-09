@@ -15,7 +15,9 @@ export class CardsComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(new CardActions.LoadCardForAll());
     this.store.subscribe((state) => {
-      this.allCards = state.reducer.card;
+      if (state.reducer?.card) {
+        this.allCards = state.reducer.card;
+      }
     });
   }
 }
