@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as cardAction from '../cards/store/card.actions';
 import './edit-list-lit-element/list-button';
-import { VariablesActions } from 'src/app/constant-variable/constants';
 
 @Component({
   selector: 'app-edit-product',
@@ -20,12 +19,12 @@ export class EditProductComponent implements OnInit {
     private router: Router,
     private store: Store<any>
   ) {}
-  cardlist: any;
+  cardList: any;
   ngOnInit(): void {
     this.getAllCardList();
     this.store.subscribe((state) => {
-      this.cardlist = state.reducer.card;
-      if (this.cardlist.length == 0) {
+      this.cardList = state.reducer.card;
+      if (this.cardList.length == 0) {
         this.noData = true;
       } else {
         this.noData = false;
@@ -45,11 +44,6 @@ export class EditProductComponent implements OnInit {
     this.router.navigateByUrl('/home/edit-product/' + card.id);
   }
   deleteCard() {
-    // this.httpService.deleteCard(this.selectToDelete).subscribe((res) => {
-    //   this.getAllCardList();
-    //   this.alertBoxFlag = false;
-    // });
-
     this.store.dispatch(new cardAction.DeleteCard(this.selectToDelete));
   }
   preDeleteCard(card: any) {
