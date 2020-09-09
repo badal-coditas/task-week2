@@ -52,6 +52,9 @@
         <div *ngIf="registeredFlag" class="user-registered">
           User has been registered.
         </div>
+        <div *ngIf="registerFailed" class="error">
+          This user already registered.
+        </div>
       </div>
     </form>
   </div>

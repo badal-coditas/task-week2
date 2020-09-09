@@ -3,7 +3,7 @@
     {
       "id": 1,
       "email": "badal.lohakar@gmail.com",
-      "password": "",
+      "password": "badallove",
       "name": ""
     },
     {
@@ -14,67 +14,18 @@
       "number": 74514
     },
     {
-      "id": 3,
+      "id": 4,
       "email": "badal@gmail.com",
       "password": "badallove",
       "name": "badal",
-      "number": 74514
-    },
-    {
-      "id": 4,
-      "email": "demo@gmal.com",
-      "password": "demodemo",
-      "name": "demo",
-      "number": 7894564
+      "number": 4564
     },
     {
       "id": 5,
-      "email": "demo",
-      "password": "demodemo",
-      "name": "demo",
-      "number": 123
-    },
-    {
-      "id": 6,
       "email": "badal@gmail.com",
-      "password": "demodemo",
-      "name": "demo",
-      "number": 1554
-    },
-    {
-      "id": 7,
-      "email": "democ@gmail.com",
-      "password": "democdemoc",
-      "name": "democ",
-      "number": 8546464
-    },
-    {
-      "id": 8,
-      "email": "testDemo@gmail.com",
-      "password": "123456",
-      "name": "testdemo",
-      "number": 789465
-    },
-    {
-      "id": 9,
-      "email": "badal@gmal.com",
-      "password": "badallove",
+      "password": "badallovebadal",
       "name": "badal",
-      "number": 4536
-    },
-    {
-      "id": 10,
-      "email": "demo@gmail.com",
-      "password": "demodemo",
-      "name": "demo",
-      "number": 456
-    },
-    {
-      "id": 11,
-      "email": "demo@gmail.com",
-      "password": "demodemo",
-      "name": "demo",
-      "number": 546
+      "number": 4564
     }
   ],
   "cardDetails": [

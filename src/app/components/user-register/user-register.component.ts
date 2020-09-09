@@ -11,6 +11,7 @@ export class UserRegisterComponent implements OnInit {
   registerForm: FormGroup;
   submitted: boolean = false;
   registeredFlag: boolean = false;
+  registerFailed: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private userHttp: UserHttpService
@@ -38,12 +39,21 @@ export class UserRegisterComponent implements OnInit {
         number: this.f.number.value,
       };
 
-      this.userHttp.registerUser(userData).subscribe((resData) => {
-        // console.log(resData);
-        this.registeredFlag = true;
-        this.registerForm.reset();
-        this.submitted = false;
-      });
+      this.userHttp
+        .checkLoginData(this.f.email.value, this.f.password.value)
+        .subscribe((resData) => {
+          var responseData: any = resData;
+          if (responseData.length == 0) {
+            this.userHttp.registerUser(userData).subscribe((resData) => {
+              this.registeredFlag = true;
+              this.registerForm.reset();
+              this.submitted = false;
+              this.registerFailed = false;
+            });
+          } else {
+            this.registerFailed = true;
+          }
+        });
     } else {
       this.submitted = true;
     }

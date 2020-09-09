@@ -51,8 +51,8 @@ export class UserLoginComponent implements OnInit {
       this.userHttp
         .checkLoginData(this.f.email.value, this.f.password.value)
         .subscribe((resData) => {
-          var tempArray: any = resData;
-          if (tempArray.length != 0) {
+          var responseData: any = resData;
+          if (responseData.length != 0) {
             localStorage.setItem(
               VariablesActions.LOCAL_STORAGE_USER_EMAIL,
               this.f.email.value
