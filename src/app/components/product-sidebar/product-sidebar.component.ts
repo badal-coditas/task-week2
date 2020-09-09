@@ -9,9 +9,15 @@ import { Store } from '@ngrx/store';
 })
 export class ProductSidebarComponent implements OnInit {
   userLoggedflag: any;
+  sideBarList: any;
   constructor(private userHttp: UserHttpService, private store: Store<any>) {}
 
   ngOnInit(): void {
+    this.sideBarList = [
+      { routerLink: '/home', menuName: 'All Card List' },
+      { routerLink: '/home/add-product', menuName: 'Add Card' },
+      { routerLink: '/home/edit-product', menuName: 'Edit Your Cards' },
+    ];
     this.store.subscribe((state) => {
       if (state.userLoggedReducer.loggedStatus) {
         this.userLoggedflag = true;

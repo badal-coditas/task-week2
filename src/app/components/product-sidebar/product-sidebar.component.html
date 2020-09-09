@@ -1,9 +1,7 @@
 <div class="sidebar-list">
   <ul>
-    <li routerLink="/home">All Card List</li>
-    <li routerLink="/home/add-product" *ngIf="userLoggedflag">Add Card</li>
-    <li routerLink="/home/edit-product" *ngIf="userLoggedflag">
-      Edit Your Cards
+    <li *ngFor="let list of sideBarList" [routerLink]="list.routerLink">
+      {{ list.menuName }}
     </li>
   </ul>
 </div>
