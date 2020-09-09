@@ -28,11 +28,12 @@ export class HeaderComponent implements OnInit {
     }
 
     this.store.subscribe((state) => {
-      if (state.componetReducer.loggedStatus) {
+      if (state.userLoggedReducer.loggedStatus) {
         this.flagForUserLogged = true;
-      } else if (!state.componetReducer.loggedStatus) {
+      } else if (!state.userLoggedReducer.loggedStatus) {
         localStorage.setItem(VariablesActions.USER_LOGGED_FLAG, 'false');
         this.flagForUserLogged = false;
+        localStorage.removeItem(VariablesActions.LOCAL_STORAGE_USER_EMAIL);
       }
     });
   }

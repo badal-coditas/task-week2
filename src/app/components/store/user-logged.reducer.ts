@@ -4,7 +4,7 @@ const initialState = {
   loggedStatus:
     localStorage.getItem(VariablesActions.USER_LOGGED_FLAG) || false,
 };
-export function ComponentReducer(state = initialState, action: any) {
+export function UserLoggedReducer(state = initialState, action: any) {
   switch (action.type) {
     case VariablesActions.USER_LOGGED_IN: {
       return {

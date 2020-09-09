@@ -32,6 +32,11 @@ export class UserLoginComponent implements OnInit {
       email: ['', [Validators.email, Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
+    this.store.subscribe((state) => {
+      if (state.userLoggedReducer?.loggedStatus) {
+        localStorage.setItem('loggedIn', state.userLoggedReducer.loggedStatus);
+      }
+    });
   }
   get f() {
     return this.loginForm.controls;
@@ -48,17 +53,11 @@ export class UserLoginComponent implements OnInit {
         .subscribe((resData) => {
           var tempArray: any = resData;
           if (tempArray.length != 0) {
-            localStorage.setItem('userId', this.f.email.value);
+            localStorage.setItem(
+              VariablesActions.LOCAL_STORAGE_USER_EMAIL,
+              this.f.email.value
+            );
             this.store.dispatch({ type: VariablesActions.USER_LOGGED_IN });
-            this.store.subscribe((state) => {
-              if (state.componetReducer?.loggedStatus) {
-                localStorage.setItem(
-                  'loggedIn',
-                  state.componetReducer.loggedStatus
-                );
-              }
-            });
-
             this.loginForm.reset();
             this.router.navigateByUrl('/home');
           } else {

@@ -18,7 +18,7 @@ import { ProductSidebarComponent } from './components/product-sidebar/product-si
 import { CardsComponent } from './components/cards/cards.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
-import { ComponentReducer } from './components/store/component.reducer';
+import { UserLoggedReducer } from './components/store/user-logged.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { cardReducer } from './components/cards/store/card.reducer';
 
@@ -44,7 +44,7 @@ import { ListButtonElement } from './components/edit-product/edit-list-lit-eleme
     HttpClientModule,
     StoreModule.forRoot({
       reducer: cardReducer,
-      componetReducer: ComponentReducer,
+      userLoggedReducer: UserLoggedReducer,
     }),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CardEffect]),
