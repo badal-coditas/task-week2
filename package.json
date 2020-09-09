@@ -11,7 +11,8 @@
     "test-watch": "jest --watch",
     "docs:json": "compodoc -p ./tsconfig.base.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
-    "build-storybook": "npm run docs:json && build-storybook"
+    "build-storybook": "npm run docs:json && build-storybook",
+    "db-json": "json-server --watch src/database/db.json"
   },
   "private": true,
   "dependencies": {
