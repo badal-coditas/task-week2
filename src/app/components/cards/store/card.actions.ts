@@ -11,7 +11,7 @@ export class LoadCardSuccess implements Action {
 }
 export class LoadCardFailed implements Action {
   readonly type = VariablesActions.CARDS_LOAD_FAILED;
-  constructor(public payload: CardModal[]) {}
+  constructor(public error: any) {}
 }
 export class AddCard implements Action {
   readonly type = VariablesActions.CARDS_ADD;
@@ -19,7 +19,7 @@ export class AddCard implements Action {
 }
 export class AddCardSuccess implements Action {
   readonly type = VariablesActions.CARDS_ADD_SUCCESS;
-  constructor(public payload: CardModal[]) {}
+  constructor(public message: String) {}
 }
 export class DeleteCard implements Action {
   readonly type = VariablesActions.CARDS_DELETE;

@@ -44,8 +44,7 @@ export class CardEffect {
         .addAndUpdateProductCard(actions.payload, actions.id)
         .pipe(
           map(
-            (card: CardModal[]) =>
-              new CardActions.AddCardSuccess(actions.payload)
+            (card: CardModal[]) => new CardActions.AddCardSuccess('Card Added')
           ),
           catchError((err) => of(new CardActions.LoadCardFailed(err)))
         )

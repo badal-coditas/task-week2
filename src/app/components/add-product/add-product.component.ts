@@ -48,8 +48,10 @@ export class AddProductComponent implements OnInit {
       const productData: any = this.getUserDataObject(this.userId);
       this.store.dispatch(new CardActions.AddCard(productData, this.userId));
       this.store.subscribe((state) => {
-        this.saveUserDataFlag = true;
-        this.addProduct.reset();
+        if (state.reducer.message == 'Card Added') {
+          this.saveUserDataFlag = true;
+          this.addProduct.reset();
+        }
       });
     } else {
       this.submitted = true;

@@ -39,7 +39,7 @@ export function cardReducer(
       return { ...state };
     }
     case VariablesActions.CARDS_ADD_SUCCESS: {
-      return { ...state, ...action.payload };
+      return { ...state, ...{ message: action.message } };
     }
     case VariablesActions.CARDS_DELETE: {
       return { ...state };
