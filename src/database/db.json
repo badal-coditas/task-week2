@@ -41,24 +41,6 @@
       "imagePath": "../../../assets/Gold.png"
     },
     {
-      "id": 3,
-      "email": "badal@gmail.com",
-      "companyName": "abc",
-      "quantity": 900,
-      "price": 1500,
-      "cardClass": "Gold",
-      "imagePath": "../../../assets/third.png"
-    },
-    {
-      "id": 4,
-      "imagePath": "../../../assets/fifth.png",
-      "cardClass": "silver",
-      "quantity": 500,
-      "companyName": "abc",
-      "price": 1500,
-      "email": "badal@gmail.com"
-    },
-    {
       "id": 5,
       "email": null,
       "companyName": "abc",
@@ -66,15 +48,6 @@
       "price": 1500,
       "cardClass": "Platinum",
       "imagePath": "../../../assets/Platinum.png"
-    },
-    {
-      "id": 6,
-      "imagePath": "../../../assets/second.png",
-      "cardClass": "silver",
-      "quantity": 500,
-      "companyName": "abc",
-      "price": 1500,
-      "email": "badal@gmail.com"
     },
     {
       "id": 7,

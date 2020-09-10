@@ -1,5 +1,5 @@
 <div class="card-wrapper">
-  <div *ngFor="let cards of allCards" class="card">
+  <div *ngFor="let cards of allCards$ | async" class="card">
     <card-element [card]="cards"></card-element>
   </div>
 </div>

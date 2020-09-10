@@ -45,7 +45,7 @@ import { AuthService } from './auth/auth.service';
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot({
-      reducer: cardReducer,
+      cardReducers: cardReducer,
       userLoggedReducer: UserLoggedReducer,
     }),
     StoreDevtoolsModule.instrument(),

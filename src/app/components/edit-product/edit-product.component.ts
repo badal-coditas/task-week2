@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { UserHttpService } from 'src/app/user-http/user-http.service';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import * as cardAction from '../cards/store/card.actions';
 import './edit-list-lit-element/list-button';
+import { Observable } from 'rxjs';
+import { CardModal } from '../cards/modal/card.modal';
+import * as fromCard from '../cards/store/card.reducer';
 
 @Component({
   selector: 'app-edit-product',
@@ -14,24 +17,27 @@ export class EditProductComponent implements OnInit {
   selectToDelete: any;
   alertBoxFlag = false;
   noData = false;
+  deleteMessage$: Observable<any>;
   constructor(
     private httpService: UserHttpService,
     private router: Router,
     private store: Store<any>
   ) {}
-  cardList: any;
+  cardList$: Observable<CardModal[]>;
   ngOnInit(): void {
     this.getAllCardList();
-    this.store.subscribe((state) => {
-      this.cardList = state.reducer.card;
-      if (this.cardList.length == 0) {
+    this.cardList$ = this.store.pipe(select(fromCard.getCards));
+    this.deleteMessage$ = this.store.pipe(select(fromCard.getMessage));
+    this.deleteMessage$.subscribe((res) => {
+      if (res == 'Card Deleted') {
+        this.alertBoxFlag = false;
+      }
+    });
+    this.cardList$.subscribe((res) => {
+      if (res.length == 0) {
         this.noData = true;
       } else {
         this.noData = false;
-      }
-
-      if (state.reducer?.message == 'Card Deleted') {
-        this.alertBoxFlag = false;
       }
     });
   }

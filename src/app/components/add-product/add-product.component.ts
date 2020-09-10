@@ -49,7 +49,7 @@ export class AddProductComponent implements OnInit {
       const productData: any = this.getUserDataObject(this.userId);
       this.store.dispatch(new CardActions.AddCard(productData, this.userId));
       this.store.subscribe((state) => {
-        if (state.reducer.message == 'Card Added') {
+        if (state.cardReducers.message == 'Card Added') {
           this.saveUserDataFlag = true;
           this.addProduct.reset();
         }

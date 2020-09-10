@@ -2,6 +2,7 @@ import { VariablesActions } from '../../../constant-variable/constants';
 import { CardActions } from './card.actions';
 import { CardModal } from '../modal/card.modal';
 import * as fromRoot from '../state/card.state';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 export interface CardState {
   card: CardModal[];
@@ -52,3 +53,13 @@ export function cardReducer(
       return state;
   }
 }
+
+const getCardFeaturestate = createFeatureSelector<CardState>('cardReducers');
+export const getCards = createSelector(
+  getCardFeaturestate,
+  (state: CardState) => state.card
+);
+export const getMessage = createSelector(
+  getCardFeaturestate,
+  (state: CardState) => state.message
+);
