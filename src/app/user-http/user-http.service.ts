@@ -14,6 +14,7 @@ export class UserHttpService {
   };
   readonly registerUrl = 'http://localhost:3000/registerUser';
   readonly cardUrl = 'http://localhost:3000/cardDetails';
+  readonly DbUrl = 'http://localhost:3000';
   constructor(private http: HttpClient) {}
 
   registerUser(userData: any): Observable<any> {
@@ -60,5 +61,9 @@ export class UserHttpService {
 
   deleteCard(id: any): Observable<any> {
     return this.http.delete(this.cardUrl + '/' + id, this.headerOption);
+  }
+
+  getDbInit(){
+    return this.http.get(this.DbUrl + '/db', this.headerOption);
   }
 }

@@ -11,4 +11,7 @@ export enum VariablesActions {
   CARDS_DELETE_SUCCESS = 'card-delete-success',
   CARDS_DELETE = 'card-delete',
   LOCAL_STORAGE_USER_EMAIL = 'userEmail',
+  DB_INIT = 'db-init',
+  DB_SUCCESS = 'db-success',
+  DB_FAILED = 'db-failed'
 }

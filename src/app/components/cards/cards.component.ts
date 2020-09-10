@@ -14,6 +14,9 @@ import { CardModal } from './modal/card.modal';
 })
 export class CardsComponent implements OnInit {
   allCards$: Observable<CardModal[]>;
+  errorMessage$:Observable<any>;
+  errorMessage:any;
+  httpError:boolean = false;
   constructor(
     private userHttp: UserHttpService,
     private store: Store<fromCard.AppSate>

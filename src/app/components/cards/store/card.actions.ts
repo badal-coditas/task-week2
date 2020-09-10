@@ -33,6 +33,17 @@ export class DeleteCardSuccess implements Action {
 export class LoadCardForAll implements Action {
   readonly type = VariablesActions.CARDS_LOAD_ALL;
 }
+
+export class DbInit implements Action {
+  readonly type = VariablesActions.DB_INIT;
+}
+export class DbSuccess implements Action {
+  readonly type = VariablesActions.DB_SUCCESS;
+}
+export class DbFailed implements Action {
+  readonly type = VariablesActions.DB_FAILED;
+  constructor(public error:any){}
+}
 export type CardActions =
   | LoadCard
   | LoadCardSuccess
@@ -41,4 +52,5 @@ export type CardActions =
   | AddCardSuccess
   | DeleteCard
   | LoadCardForAll
-  | DeleteCardSuccess;
+  | DeleteCardSuccess|
+  DbInit | DbSuccess | DbFailed;

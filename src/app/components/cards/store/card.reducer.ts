@@ -7,6 +7,8 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 export interface CardState {
   card: CardModal[];
   message: any;
+  error:any;
+  DbError:any;
 }
 
 export interface AppSate extends fromRoot.AppState {
@@ -16,6 +18,8 @@ export interface AppSate extends fromRoot.AppState {
 export const initialCardState: CardState = {
   card: [],
   message: null,
+  error:'',
+  DbError:'',
 };
 
 export function cardReducer(
@@ -34,7 +38,7 @@ export function cardReducer(
       return { ...state, card: action.payload };
     }
     case VariablesActions.CARDS_LOAD_FAILED: {
-      return { ...state, card: [] };
+      return { ...state, ...{error:action.error} };
     }
     case VariablesActions.CARDS_ADD: {
       return { ...state };
@@ -48,7 +52,15 @@ export function cardReducer(
     case VariablesActions.CARDS_DELETE_SUCCESS: {
       return { ...state, ...{ message: action.message } };
     }
-
+    case VariablesActions.DB_INIT: {
+      return { ...state};
+    }
+    case VariablesActions.DB_FAILED: {
+      return {...state, ...{DbError:action.error}};
+    }
+    case VariablesActions.DB_SUCCESS: {
+      return { ...state};
+    }
     default:
       return state;
   }
@@ -62,4 +74,12 @@ export const getCards = createSelector(
 export const getMessage = createSelector(
   getCardFeaturestate,
   (state: CardState) => state.message
+);
+export const getErrorMessage = createSelector(
+  getCardFeaturestate,
+  (state: CardState) => state.error
+);
+export const getDbError = createSelector(
+  getCardFeaturestate,
+  (state: CardState) => state.DbError
 );

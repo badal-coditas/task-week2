@@ -1,2 +1,5 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
+<div *ngIf="httpError" class="error">
+    <error-box [message]="errorMessage"></error-box>
+</div>

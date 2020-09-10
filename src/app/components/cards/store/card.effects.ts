@@ -22,7 +22,7 @@ export class CardEffect {
     mergeMap((actions: CardActions.LoadCard) =>
       this.httpService.getAllCardsDataFor().pipe(
         map((card: CardModal[]) => new CardActions.LoadCardSuccess(card)),
-        catchError((err) => of(new CardActions.LoadCardFailed(err)))
+        catchError((err) => of(new CardActions.DbFailed(err)))
       )
     )
   );
@@ -32,7 +32,7 @@ export class CardEffect {
     mergeMap((actions: CardActions.LoadCardForAll) =>
       this.httpService.getAllCardsData().pipe(
         map((card: CardModal[]) => new CardActions.LoadCardSuccess(card)),
-        catchError((err) => of(new CardActions.LoadCardFailed(err)))
+        catchError((err) => of(new CardActions.DbFailed(err)))
       )
     )
   );
@@ -46,7 +46,7 @@ export class CardEffect {
           map(
             (card: CardModal[]) => new CardActions.AddCardSuccess('Card Added')
           ),
-          catchError((err) => of(new CardActions.LoadCardFailed(err)))
+          catchError((err) => of(new CardActions.DbFailed(err)))
         )
     )
   );
@@ -56,7 +56,7 @@ export class CardEffect {
     mergeMap((actions: CardActions.DeleteCard) =>
       this.httpService.deleteCard(actions.id).pipe(
         map(() => new CardActions.DeleteCardSuccess('Card Deleted')),
-        catchError((err) => of(new CardActions.LoadCardFailed(err)))
+        catchError((err) => of(new CardActions.DbFailed(err)))
       )
     )
   );
@@ -68,7 +68,19 @@ export class CardEffect {
     mergeMap((actions: CardActions.DeleteCardSuccess) =>
       this.httpService.getAllCardsDataFor().pipe(
         map((card: CardModal[]) => new CardActions.LoadCardSuccess(card)),
-        catchError((err) => of(new CardActions.LoadCardFailed(err)))
+        catchError((err) => of(new CardActions.DbFailed(err)))
+      )
+    )
+  );
+
+  @Effect() DBInit$: Observable<Action> = this.actions$.pipe(
+    ofType<CardActions.DbInit>(
+      VariablesActions.DB_INIT
+    ),
+    mergeMap((actions: CardActions.DbInit) =>
+      this.httpService.getDbInit().pipe(
+        map(() => new CardActions.DbSuccess()),
+        catchError((err) => of(new CardActions.DbFailed(err)))
       )
     )
   );
