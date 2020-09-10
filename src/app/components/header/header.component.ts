@@ -19,18 +19,18 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     if (
       this.userHttp.getValueFromLocalStorage(
-        VariablesActions.USER_LOGGED_FLAG
+        VariablesActions.USER_LOGGED_FLAG.toString()
       ) == 'true'
     ) {
       this.flagForUserLogged = true;
     } else {
       this.flagForUserLogged = false;
     }
-    console.log(this.flagForUserLogged);
+
     this.store.subscribe((state) => {
-      if (state.userLoggedReducer.loggedStatus) {
+      if (state.userLoggedReducer.loggedStatus.toString() == 'true') {
         this.flagForUserLogged = true;
-      } else if (!state.userLoggedReducer.loggedStatus) {
+      } else if (state.userLoggedReducer.loggedStatus.toString() == 'false') {
         localStorage.setItem(VariablesActions.USER_LOGGED_FLAG, 'false');
         this.flagForUserLogged = false;
         localStorage.removeItem(VariablesActions.LOCAL_STORAGE_USER_EMAIL);

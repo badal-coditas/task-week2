@@ -20,10 +20,12 @@
         </td>
         <td>
           <button-element
+            [buttonType]="'button'"
             [buttonName]="'Edit'"
             (click)="editCard(card)"
           ></button-element>
           <button-element
+            [buttonType]="'button'"
             [buttonName]="'Delete'"
             (click)="preDeleteCard(card)"
           ></button-element>

@@ -21,14 +21,9 @@ export class UserLoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log(
-      typeof this.userHttp.getValueFromLocalStorage(
-        VariablesActions.USER_LOGGED_FLAG
-      )
-    );
     if (
       this.userHttp.getValueFromLocalStorage(
-        VariablesActions.USER_LOGGED_FLAG
+        VariablesActions.USER_LOGGED_FLAG.toString()
       ) == 'true'
     ) {
       this.router.navigateByUrl('/home');

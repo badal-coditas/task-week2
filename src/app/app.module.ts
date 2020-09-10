@@ -24,6 +24,8 @@ import { cardReducer } from './components/cards/store/card.reducer';
 
 import { IndividualCard } from './components/cards/card-lit-element/individual-card';
 import { ListButtonElement } from './components/edit-product/edit-list-lit-element/list-button';
+import { AuthGuardService } from './auth/auth-guard.service';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,7 @@ import { ListButtonElement } from './components/edit-product/edit-list-lit-eleme
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CardEffect]),
   ],
-  providers: [UserHttpService],
+  providers: [UserHttpService, AuthGuardService, AuthService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   // entryComponents: [IndividualCard, ListButtonElement],

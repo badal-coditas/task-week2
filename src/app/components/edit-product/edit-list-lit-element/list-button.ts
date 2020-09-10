@@ -17,7 +17,9 @@ export class ListButtonElement extends LitElement {
   }
 
   render() {
-    return html` <button class="action-buttons">${this.buttonName}</button> `;
+    return html`
+      <button class="action-buttons" type="submit">${this.buttonName}</button>
+    `;
   }
   @property({ type: String })
   buttonName: any;

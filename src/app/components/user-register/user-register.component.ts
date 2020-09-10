@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserHttpService } from 'src/app/user-http/user-http.service';
+import { VariablesActions } from 'src/app/constant-variable/constants';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-register',
@@ -14,10 +16,18 @@ export class UserRegisterComponent implements OnInit {
   registerFailed: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
-    private userHttp: UserHttpService
+    private userHttp: UserHttpService,
+    private router: Router
   ) {}
 
   ngOnInit() {
+    if (
+      this.userHttp.getValueFromLocalStorage(
+        VariablesActions.USER_LOGGED_FLAG.toString()
+      ) == 'true'
+    ) {
+      this.router.navigateByUrl('/home');
+    }
     this.registerForm = this.formBuilder.group({
       fullName: ['', Validators.required],
       number: ['', Validators.required],

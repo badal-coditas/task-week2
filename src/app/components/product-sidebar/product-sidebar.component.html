@@ -1,7 +1,9 @@
 <div class="sidebar-list">
   <ul>
-    <li *ngFor="let list of sideBarList" [routerLink]="list.routerLink">
-      {{ list.menuName }}
-    </li>
+    <ng-container *ngFor="let list of sideBarList">
+      <li [routerLink]="list.routerLink" *ngIf="list.userLoggedflag">
+        {{ list.menuName }}
+      </li>
+    </ng-container>
   </ul>
 </div>
