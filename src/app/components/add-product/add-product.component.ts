@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as CardActions from '../cards/store/card.actions';
 import { CardModal } from '../cards/modal/card.modal';
+import { VariablesActions } from 'src/app/constant-variable/constants';
 
 @Component({
   selector: 'app-add-product',
@@ -60,7 +61,7 @@ export class AddProductComponent implements OnInit {
   getUserDataObject(id: any): CardModal {
     return {
       id: id || '',
-      email: localStorage.getItem('userId'),
+      email: localStorage.getItem(VariablesActions.LOCAL_STORAGE_USER_EMAIL),
       companyName: this.f.companyName.value,
       quantity: this.f.quantity.value,
       price: this.f.price.value,

@@ -12,6 +12,13 @@
       "password": "badalbadal",
       "name": "badal",
       "number": 74514
+    },
+    {
+      "id": 3,
+      "email": "demo@gmail.com",
+      "password": "demo123456",
+      "name": "demo",
+      "number": 4561
     }
   ],
   "cardDetails": [
@@ -79,13 +86,13 @@
       "imagePath": "../../../assets/ten.png"
     },
     {
-      "id": 8,
-      "email": null,
-      "companyName": "democ",
+      "id": 9,
+      "email": "demo@gmail.com",
+      "companyName": "demo",
       "quantity": 45,
-      "price": 452,
-      "cardClass": "Platinum",
-      "imagePath": "../../../assets/Platinum.png"
+      "price": 456,
+      "cardClass": "Silver",
+      "imagePath": "../../../assets/Silver.png"
     }
   ]
 }
